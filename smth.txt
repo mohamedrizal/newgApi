@@ -1,0 +1,26 @@
+-user
+ 	*(id,full_name,email,pass,role(default: user))
+	*auth
+-ticket/product
+ 	(id,ticket_name,price,image,category_id)
+	*crud	
+	*admin only
+-category
+	(id,category_name)
+	*crud
+	*admin only
+-cart
+	(id,user_id,total:default(0))
+	*crud
+	*user crud
+	*admin crud
+-cart-product(ticket)
+	(id,cart_id,product_id,qty,total_price)
+	*crud
+	*user crud
+	*admin crud
+-order
+	(id,cart_id,user_id,email,total,status)
+	*crud
+	*user (create,read only)
+	*admin crud

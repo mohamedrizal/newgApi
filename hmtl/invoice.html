@@ -1,0 +1,37 @@
+<body style="background-color: #f5f5f5; margin: 0;">
+    <div class="header" style="background-color: #F24987; height: 50px;"></div>
+        <div class="wrapper">
+            <div class="title" style="text-align: center; margin-top: 3rem;">
+                <h1 style="margin: 0;">Your Qr-code Order</h1>
+                <h3 style="margin: 0;">use your qr-code for check-in and get your order</h3>
+            </div>
+            <div class="img" style="margin: 2rem;">
+                <img src="{{ qrCode }}" style="display: block; margin-right: auto; margin-left: auto;" width="150" height="150" >
+            </div>
+            <div class="body" style="text-align: center;">
+                <h3 style="margin: 10px;">your order</h3>
+                <table style="margin-right: auto; margin-left: auto;">
+                    <tr>
+                        <th style="padding: 0 5px;">Product Name</th>
+                        <th style="padding: 0 5px;">Quantity</th>
+                        <th style="padding: 0 5px;">Total</th>
+                    </tr>
+                    {{#product}}
+                    <tr>
+                        <td style="padding: 0 5px;">{{Name}}</td>
+                        <td style="padding: 0 5px;">{{qty}}</td>
+                        <td style="padding: 0 5px;">{{total}}</td>
+                    </tr>
+                    {{/product}}
+                    <tr>
+                        <td style="padding: 10px 0 0 0; font-weight: bold;text-align: left;">Sub-total : {{subTotal}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="foot" style="text-align: center;">
+                <p style="font-weight: bold; color: #F24987;">dont lose this qr-code and give it to other person!!</p>
+            </div>
+        </div>
+    <div class="footer" style="background-color: #F24987; height: 50px; margin-top: 1rem;"></div>
+</body>
+</html>
